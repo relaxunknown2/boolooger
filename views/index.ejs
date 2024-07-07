@@ -1,0 +1,46 @@
+<%- include("partials/header") %>
+
+    <div class="title-container">
+
+        <div class="title">
+            <h1>Welcome To Boolooger</h1>
+        </div>
+
+        <% if (locals.blogPosts && blogPosts.length> 0) { %>
+
+            <span>
+                your posts
+            </span>
+
+            <div class="create-link">
+                <a href="/create-post">click here to create another post</a>
+            </div>
+
+            <div class="blog-content">
+
+                <ul class="blog-list">
+                    <% blogPosts.forEach(newPost=> { %>
+                        <li class="blog-posts">
+                            <h2>
+                                <%= newPost.bodyTitle %>
+                            </h2>
+                            <p>
+                                <%= newPost.bodyText %>
+                            </p>
+                        </li>
+                    <% }); %>
+                </ul>
+
+            </div>
+        
+            <% } else { %>
+
+                <div class="create-link">
+                    <a href="/create-post">click here to create post</a>
+                </div>
+
+                <% } %>
+
+    </div>
+
+    <%- include("partials/footer") %>

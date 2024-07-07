@@ -1,0 +1,27 @@
+<%- include("partials/header") %>
+
+<h1>Fill This Form To Create Blog Post</h1>
+
+
+<div class="form-container-1">
+
+    <div class="form-container-2">
+        <form action="/publish" method="POST">
+            <div class="input-1">
+                <label for="blog-title">Blog title</label>
+                <input type="text" name="blog-title" placeholder="title here" required>
+            </div>
+            
+            <div class="input-2">
+                <label for="body-text">Body text</label>
+                <textarea id="body-text" name="body-text" placeholder="body text here" required></textarea>
+            </div>
+            <div class="publish-btn">
+                <input type="submit" value="publish">
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<%- include("partials/footer") %>

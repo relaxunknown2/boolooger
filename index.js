@@ -25,10 +25,33 @@ app.get("/create-post", (req, res) => {
 app.post("/publish", (req, res) => {
     const newPost = {
         bodyTitle : req.body["blog-title"],
-        bodyText : req.body["body-text"]
+        bodyText : req.body["body-text"],
+        indexNum : posts.length
     }
 
     posts.push(newPost);
+    res.redirect("/");
+});
+
+app.get("/update-post", (req, res) => {
+    res.render("update");
+});
+
+// post update info
+app.post("/update-post-data", (req, res) => {
+    const index = req.body["index-num"];
+    const updatedTitle = req.body.title;
+    const updatedBodyText = req.body['body-texts'];
+
+    if (!isNaN(index) && index >= 0 && index < posts.length) {
+        posts[index].bodyTitle = updatedTitle;
+        posts[index].bodyText = updatedBodyText;
+        console.log(`post at index ${index} has been updated`);
+    } else {
+        res.status(404).send("Post not found or invalid index.");
+    }
+    
+
     res.redirect("/");
 });
 

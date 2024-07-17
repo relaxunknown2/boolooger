@@ -1,0 +1,32 @@
+<%- include("partials/header")  %>
+
+<h1>Fill This Form To Update Blog Post</h1>
+
+
+<div class="form-container-1">
+
+    <div class="form-container-2">
+        <form action="/update-post-data" method="POST">
+            <div class="input-1">
+                <label for="title">Blog title</label>
+                <input type="text" name="title" placeholder="title here" required>
+            </div>
+            
+            <div class="input-2">
+                <label for="body-texts">Body text</label>
+                <textarea id="body-text" name="body-texts" placeholder="body text here" required></textarea>
+            </div>
+
+            <div class="input-3">
+                <label for="index-num">Post Number</label>
+                <input type="number" name="index-num" placeholder="Enter post number here">
+            </div>
+            <div class="publish-btn">
+                <input type="submit" value="publish">
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<%- include("partials/footer")  %>

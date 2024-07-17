@@ -22,11 +22,14 @@
                     <% blogPosts.forEach(newPost=> { %>
                         <li class="blog-posts">
                             <h2>
-                                <%= newPost.bodyTitle %>
+                                <%= newPost.indexNum %>. <%= newPost.bodyTitle %> 
                             </h2>
                             <p>
                                 <%= newPost.bodyText %>
                             </p>
+
+                            <a  href="/update-post"><button class="dym-btn">Update</button></a>
+                            <button class="dym-btn left-btn">Delete</button>
                         </li>
                     <% }); %>
                 </ul>
